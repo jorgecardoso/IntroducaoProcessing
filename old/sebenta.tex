@@ -1,0 +1,117 @@
+\documentclass[12pt, a4paper, twoside, notitlepage]{book}
+\usepackage[portuguese]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx, lastpage}
+\usepackage{subfigure}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage{float}
+\usepackage{url}
+\usepackage{listings}
+
+
+\newcommand{\programa}[1]{\texttt{#1}}
+
+%cores
+\definecolor{cinza}{rgb}{0.8,0.8,0.8} %fundo do codigo
+
+\title{%
+{\Huge Sebenta}\\%
+de\\%
+Processing\\%
+{\small a.k.a.: Programação para Artistas, Artistas Digitais, Pseudo-Artistas/Digitais, e Todos os Outros... (usando o Processing)}\\%
+}
+\author{\copyright Jorge Cardoso}
+
+\begin{document}
+\lstset{language=java, basicstyle=\small\ttfamily, breaklines=true, numbers=left, backgroundcolor=\color{cinza}}
+%\lstset{language=Java,basicstyle=\footnotesize\ttfamily, breaklines=true, numbers=left}
+\lstset{moredelim=[is][\itshape\bfseries]{/**/}{/**/}}%
+\renewcommand{\lstlistingname}{Exemplo}
+\renewcommand{\lstlistlistingname}{Exemplos}
+
+\frontmatter
+%%%%%%%%%Pagina de Titulo%%%%%%%%%%%%%
+\maketitle
+\thispagestyle{empty}
+\vfill
+%\begin{r}
+\noindent
+Universidade Católica Portuguesa -- Centro Regional do Porto - Foz\\
+Escola das Artes\\
+Curso de Som e Imagem\\
+%\end{center}
+\vfill
+\begin{center}
+Built with \LaTeX
+\end{center}
+\clearpage
+\setcounter{page}{0}
+\thispagestyle{empty}
+\clearpage
+\tableofcontents
+\clearpage
+\lstlistoflistings
+
+%\include{Agradecimentos/dedicatoria}
+%\cleardoublepage
+\include{Agradecimentos/Agradecimentos}
+\cleardoublepage
+
+\mainmatter
+
+\part{O Básico}
+\include{OQueEProgramar/OQueEProgramar}
+\include{020-processando}
+\include{030-variaveis}
+\include{040-condicionais}
+\include{050-iteraccao}
+%%modulos
+%
+%%\chapter{Matriz - A Sequela}
+%%%vectores e matrizes
+\include{060-funcoes}
+\include{065-classes}
+\include{070-comentarios}
+\include{080-pseudocodigo}
+%%%\include{095-mvc}
+%
+%\part{O Avançado}
+%\include{Interaccao/Interaccao}
+%\include{090-2dcor}
+%\include{100-texto}
+%\include{110-3d}
+%%%\chapter{e-magens (Imagens}
+%\include{ReproducaoVideo/ReproducaoVideo}
+
+%\part{O Vilão}
+%\chapter{OSC}
+%\chapter{Captura de Vídeo}\label{cap:capturavideo}
+%\chapter{Análise de Vídeo}
+%\chapter{Dinâmicas}
+%\section{Traer Physics}
+%%\chapter{Comunicação}
+
+
+\backmatter
+%%\part{\emph{Code Art}}
+%%\chapter{O Código Como Forma de Arte}
+%%Porque não utilizar as ``entranhas'' do código que escrevemos como forma de expressão artística?
+
+%\part{Resolução dos Exercícios}
+%\include{900-resolucaoexercicios}
+
+
+\bibliographystyle{plain} %Style of Bibliography: plain / apalike / amsalpha / ...
+\bibliography{SebentaPM} 
+
+%\begin{thebibliography}{12}
+%\bibitem{infopedia} ``Infopédia''. Dicionário online. \url{http://infopedia.pt}
+%\bibitem{proc-env} Processing, \emph{Environment}, \url{http://processing.org/reference/environment/index.html}
+%
+%\bibitem{zoom} ``Zoom''. Exemplo do Processing. \url{http://processing.org/learning/examples/zoom.html}
+%
+%\bibitem{processing}Ben Fry and Casey Reas, ``Processing (BETA)'',  \url{http://processing.org/}
+%\end{thebibliography}
+\end{document}
