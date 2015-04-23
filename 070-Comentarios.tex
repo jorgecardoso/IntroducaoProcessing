@@ -1,0 +1,71 @@
+\chapter{Comentário Final (Documentação)}
+
+Um programa não é apenas formado pelo conjunto de instruções da linguagem de programação. Se assim fosse, a maioria dos programas seria ininteligíveis para nós. Atentem no programa do Exemplo [x]. O que faz esse programa? Como o faz? Como o modificamos para o adaptar a outra situação? Torna-se difícil (embora não impossível) responder a estas perguntas, porque o programa não está documentado. Agora observem o Exemplo [xpto].
+
+\section{Comentários}
+Os comentários são pedaços de texto que não afectam a execução do programa e que 
+servem para documentar o código, explicando o funcionamento do programa.
+
+Os comentários devem ser usados para explicar secções de código cujo significado não
+seja óbvio\footnote{O significado é óbvio ou não dependendo do contexto.}.
+
+De forma a que o compilador possa distinguir entre texto de comentários e texto
+do programa é necessário que os comentários sejam identificados por símbolos especiais.
+Existem dois tipos de comentários:
+\begin{description}
+\item[Linha] Os comentários de linha são identificados pelos caracteres ``\texttt{//}''. 
+Todo o texto seguinte na linha é considerado comentário e, portanto, ignorado. Exemplo:
+\begin{lstlisting}
+int altura[100]; // a altura de 100 pessoas em centímetros
+\end{lstlisting}
+\item[Bloco] Os comentários de bloco servem para definir um comentário que se prolonga por
+várias linhas. Os comentários de bloco são delimitados por duas sequências de caracteres:
+``\texttt{/*}'' e ``\texttt{*/}''. Estes comentários permitem-nos dar uma explicação mais
+longa sobre o código. Exemplo:
+\begin{lstlisting}
+/* Determinar a altura máxima e mínima do grupo de pessoas.
+   Precisamos de variáveis temporárias para armazenar as 
+   alturas miníma e máxima enquanto estamos a percorrer o 
+   vector. */
+   int minimo = 0, maximo = 10000;
+   int i;
+   for (i = 0; i < 100; i = i + 1) {
+       if (altura[i] < minimo) {           
+           minimo = altura[i];
+       } else if (altura[i] > maximo) {
+           maximo = altura[i];
+       }
+   }
+   print("Altura máxima: " + maximo);
+   print("Altura miníma: " + minimo);
+\end{lstlisting}
+\end{description}
+
+A utilização de um tipo de comentário ou outro é, maioritariamente, uma questão de estilo. 
+Podemos utilizar indiferencialmente um ou outro. Os exemplos anteriores poderiam ter sido escritos como:
+\begin{lstlisting}
+inteiro altura[100]; /* A altura de 100 pessoas em centímetros */
+
+// Determinar a altura máxima e mínima do grupo de pessoas.
+// Precisamos de variáveis temporárias para armazenar as 
+// alturas miníma e máxima enquanto estamos a percorrer o 
+// vector.
+   int minimo = 0, maximo = 10000;
+   int i;
+   for (i = 0; i < 100; i = i + 1) {
+       if (altura[i] < minimo) {           
+           minimo = altura[i];
+       } else if (altura[i] > maximo) {
+           maximo = altura[i];
+       }
+   }
+   print("Altura máxima: " + maximo);
+   print("Altura miníma: " + minimo);
+\end{lstlisting}
+
+
+\section{Exercícios}
+\begin{enumerate}
+\item 
+Documente, se ainda não o fez, os últimos dois programas que fez.	
+\end{enumerate}

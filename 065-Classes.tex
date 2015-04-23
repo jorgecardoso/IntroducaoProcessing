@@ -1,0 +1,80 @@
+\chapter{Com Classe! (Classes e Objectos)}
+
+\section{Objectos e Classes}
+Já vimos nos primeiros capítulos que as variáveis guardam um determinado tipo de dados e vimos também já alguns tipos de dados primitivos ou simples, como o \texttt{int}, \texttt{boolean} e \texttt{float}.
+
+No entanto, em Processing, existe um outro tipo de dados que pode ser definido pelo programador. Estes tipos são representados por \emph{objectos}. Um objecto é uma estrutura de dados e funcionalidade. Ou seja, não serve apenas para armazenar dados, mas também pode ter associado métodos. Desta forma podemos agrupar dados e métodos que operam sobre esses dados, de forma mais estruturada.
+
+A definição destes tipos de dados é feita através daquilo que se chama, em programação, uma \emph{classe}. 
+Apenas para dar um exemplo simples de uma classe, vejamos o código seguinte:
+\begin{lstlisting}
+public class Pessoa {
+    String nome;
+    int anoNascimento;
+    int altura;
+    
+    public Pessoa(String nomePessoa, int anoNasc, int alturaPessoa) {
+        nome = nomePessoa;
+        anoNascimento = anoNasc;
+        altura = alturaPessoa;
+    }
+    
+    public int calculaIdade() {
+        return year()-anoNascimento;
+    }   
+}
+\end{lstlisting}
+
+
+O exemplo define uma classe que representa uma pessoa. Neste exemplo, usamos apenas o nome, o ano de nascimento e a altura para representar uma pessoa. Para além dos dados, podemos ver que a classe define também métodos que operam sobre esses dados. O método \texttt{calculaIdade()} calcula a idade da pessoa tendo em conta o ano de nascimento (\texttt{anoNascimento}) e o ano em que estamos (\texttt{year()}). O método \texttt{Pessoa()} é um método especial, designado por \emph{construtor} da classe.
+
+\subsection{Construtores}
+Um construtor é um método especial que serve para construir o objecto da classe correspondente. Como podemos ver no exemplo anterior, o construtor é utilizado para inicializar as variáveis que representam a pessoa.
+Para construirmos um objecto da classe que criámos atrás, teriamos de escrever algo como:
+\begin{lstlisting}
+Pessoa joao;
+
+joao = new Pessoa("João", 1980, 174);
+\end{lstlisting}
+Primeiro temos de declarar uma variável do tipo \texttt{Pessoa}. Depois temos de criar o objecto \texttt{Pessoa} correspondente e reservar espaço na memória do computador para guardar todos os dados associados a uma \texttt{Pessoa}. Isso é feito na linha seguinte, utilizando a \emph{keyword} \texttt{new} (tal como nos vectores) e invocando o construtor com os parâmetros necessários.
+
+Depois de termos o nosso objecto criado, podemos invocar o método que calcula a idade do \texttt{joao}:
+\begin{lstlisting}
+print(joao.calculaIdade());
+\end{lstlisting}
+
+Para invocarmos um método de um objecto temos de utilizar a notação \emph{ponto}. Ou seja, escrevemos o nome do objecto seguido de um ``.'' (ponto final), seguido no nome e parâmetros do método que estamos a invocar.
+Obviamente, apenas podemos invocar métodos que tenham sido definidos na classe do objecto (no nosso exemplo apenas definimos um -- \texttt{calculaIdade()}).
+
+
+\subsection{Texto (\texttt{String})}
+Existe um tipo de dados muito utilizado e que ainda não abordamos: a \texttt{String}. Uma string é um pedaço de texto. Em Processing, uma string é representada pela classe \texttt{String}%
+\footnote{Noutras linguagens de programação, uma string pode ser representada de forma diferente.}
+.
+
+Por exemplo, se o nosso programa necessitar de armazenar o nome do utilizador, teriamos de declarar uma variável do tipo
+\texttt{String}:
+\begin{lstlisting}
+String nomeUtilizador;
+\end{lstlisting}
+
+Uma vez que uma \texttt{String} é uma classe, para criarmos um objecto deste tipo temos de invocar o construtor:
+\begin{lstlisting}
+nomeUtilizador = new String("jorge");
+
+print(nomeUtilizador);
+\end{lstlisting}
+As strings são representadas por texto entre aspas.
+
+De resto, as classes comportam-se como um tipo de dados simples, pelo que podemos, por exemplo, criar um vector de strings:
+\begin{lstlisting}
+String nomes[];
+
+nomes = new String[10];
+
+nomes[0] = new String("Joao");
+nomes[1] = new String("Jorge");
+...
+nomes[9] = new String("André");
+\end{lstlisting}
+Tenham em atenção que, neste exemplo, demos dois usos diferentes à \emph{keyword} \texttt{new}: primeiro para reservar espaço de memória para o vector e depois para reservar espaço de memória para cada elemento desse vector (porque cada elemento é uma string).
