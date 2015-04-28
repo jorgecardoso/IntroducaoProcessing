@@ -1,0 +1,169 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {portuguese}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o - o que \IeC {\'e} programar? }{7}{chapter.1}
+\ttl@starttoc {default@1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Programa\IeC {\c c}\IeC {\~a}o}{7}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Como Funciona o Processador de um Computador}{8}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Hist\IeC {\'o}ria Resumida das Linguagens de Programa\IeC {\c c}\IeC {\~a}o}{8}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Linguagens de Programa\IeC {\c c}\IeC {\~a}o}{8}{section.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4.1}Compilar e Executar}{9}{subsection.1.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}L\IeC {\'o}gica e Sintaxe}{9}{section.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.6}N\IeC {\'\i }vel de Detalhe}{10}{section.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.7}Conceitos B\IeC {\'a}sicos de Um Programa}{11}{section.1.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.8}Exerc\IeC {\'\i }cios}{13}{section.1.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.8.1}Resolvidos}{13}{subsection.1.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.8.2}Para Resolver}{13}{subsection.1.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.8.3}Resolu\IeC {\c c}\IeC {\~a}o dos Exerc\IeC {\'\i }cios Resolvidos}{13}{subsection.1.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Notas}{14}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Processing}{17}{chapter.2}
+\ttl@stoptoc {default@1}
+\ttl@starttoc {default@2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}O Que \IeC {\'E}?, Para Que Serve?}{17}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Ambiente de Desenvolvimento}{19}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Menus}{19}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{File}{19}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Edit}{20}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Sketch}{20}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Tools}{20}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Help}{20}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Obter o Processing}{20}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Coordenadas}{21}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Compilar, Executar e Publicar}{21}{section.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.6}Alguns Exemplos}{22}{section.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Statements and Comments (Instru\IeC {\c c}\IeC {\~o}es e Coment\IeC {\'a}rios)}{22}{section*.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Width and Height (Largura e Altura)}{22}{section*.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.7}Modos de Programa\IeC {\c c}\IeC {\~a}o}{23}{section.2.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.7.1}Modo B\IeC {\'a}sico}{23}{subsection.2.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.7.2}Modo Cont\IeC {\'\i }nuo}{23}{subsection.2.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.7.3}\emph {Java}}{24}{subsection.2.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.8}Exerc\IeC {\'\i }cios}{24}{section.2.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Vari\IeC {\'a}veis}{27}{chapter.3}
+\ttl@stoptoc {default@2}
+\ttl@starttoc {default@3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Mem\IeC {\'o}ria e Vari\IeC {\'a}veis}{27}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Guerra dos Tipos (Tipos de Dados)}{28}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Declara\IeC {\c c}\IeC {\~a}o de Vari\IeC {\'a}veis}{29}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Guardar na Gaveta (Atribui\IeC {\c c}\IeC {\~a}o)}{30}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4.1}Inicializa\IeC {\c c}\IeC {\~a}o}{31}{subsection.3.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4.2}Combinar Declara\IeC {\c c}\IeC {\~a}o com Atribui\IeC {\c c}\IeC {\~a}o}{31}{subsection.3.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Visibilidade}{32}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}Instru\IeC {\c c}\IeC {\~o}es}{33}{section.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.6.1}Operadores Aritm\IeC {\'e}ticos}{33}{subsection.3.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.6.2}Uma Opera\IeC {\c c}\IeC {\~a}o Complicada! (Instru\IeC {\c c}\IeC {\~o}es Complexas)}{33}{subsection.3.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.7}Exerc\IeC {\'\i }cios}{34}{section.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Condi\IeC {\c c}\IeC {\~o}es}{35}{chapter.4}
+\ttl@stoptoc {default@3}
+\ttl@starttoc {default@4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Se Isto Ent\IeC {\~a}o Aquilo (\texttt {if})}{35}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Comutar (\texttt {switch})}{38}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Opero...Se... (Operadores Condicionais)}{39}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.1}L\IeC {\'o}gicos}{39}{subsection.4.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Um Exemplo Pr\IeC {\'a}tico}{40}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Exerc\IeC {\'\i }cios}{41}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Itera\IeC {\c c}\IeC {\~a}o}{43}{chapter.5}
+\ttl@stoptoc {default@4}
+\ttl@starttoc {default@5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}\texttt {while}}{44}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}\texttt {do}}{44}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}\texttt {for}}{45}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}Tipos de vari\IeC {\'a}veis complexos}{46}{section.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4.1}Declarar e Inicializar Vectores}{49}{subsection.5.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4.2}Percorrer Vectores}{49}{subsection.5.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.5}Enter The Matrix... (Matrizes)}{50}{section.5.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.5.1}Percorrer Matrizes}{51}{subsection.5.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.6}Dois Exemplos Pr\IeC {\'a}ticos }{51}{section.5.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6.1}Quadrados Saltitantes}{51}{subsection.5.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6.2}Ru\IeC {\'\i }do}{52}{subsection.5.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.7}Exerc\IeC {\'\i }cios}{52}{section.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Fun\IeC {\c c}\IeC {\~a}o da Forma (M\IeC {\'e}todos, Fun\IeC {\c c}\IeC {\~o}es)}{55}{chapter.6}
+\ttl@stoptoc {default@5}
+\ttl@starttoc {default@6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Par\IeC {\^a}metros}{58}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Valor de Retorno}{59}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}(Quase) Tudo S\IeC {\~a}o M\IeC {\'e}todos}{63}{section.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.1}Call Me Back... (Callbacks)}{63}{subsection.6.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.4}M\IeC {\'e}todos e Vari\IeC {\'a}veis}{64}{section.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.5}Exerc\IeC {\'\i }cios}{65}{section.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Coment\IeC {\'a}rio Final (Documenta\IeC {\c c}\IeC {\~a}o)}{67}{chapter.7}
+\ttl@stoptoc {default@6}
+\ttl@starttoc {default@7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Coment\IeC {\'a}rios}{67}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Exerc\IeC {\'\i }cios}{68}{section.7.2}
+\contentsfinish 
