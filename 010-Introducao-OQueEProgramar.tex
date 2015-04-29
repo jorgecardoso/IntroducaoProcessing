@@ -1,13 +1,25 @@
 \chapterimage{band1.png}
-\chapter{Introdução - o que é programar? }
+\chapter{Introdução - o que é programar?}
 
 Este capítulo pretende dar apenas uma visão geral do que significa programar um computador. O leitor mais ávido por começar a experimentar pode avançar para o próximo capítulo.
 
 \section{Programação}
-``Programar'', no contexto deste manual, significa definir um conjunto de instruções que irão ser executadas por uma máquina. No entanto, pode ser instrutivo fazermos a analogia máquina--pessoa, i.e., pensarmos em exemplos do nosso quotidiano e imaginarmo-nos a ``executar um programa'', para ilustrar alguns conceitos associados à programação de computadores.
+``Programar'', no contexto deste manual, significa especificar um conjunto de instruções para serem executadas por uma máquina. No entanto, pode ser instrutivo fazermos a analogia máquina--pessoa para ilustrar alguns conceitos associados à programação de computadores, i.e., pensarmos em exemplos do nosso quotidiano e imaginarmo-nos a ``executar um programa''.
 
 %Estas instruções, ou passos, não são mais do que ``comandos'' que a máquina ou pessoa deve executar para chegar ao objectivo final. 
 
+\begin{lstlisting}[caption={Receita de pipocas. Adaptado de \url{http://lifestyle.sapo.pt/sabores/receitas/pipocas-doces-caseiras}.}, label=exe:receitaPipocas]
+Cobre-se o fundo de um tacho com milho sem, no entanto, sobrepor. 
+Rega-se o milho com um pouco de óleo e leva-se a lume brando, com o tacho tapado. 
+Quando o milho começar a estalar agita-se o recipiente (sempre tapado).
+Deixa-se cozinhar enquanto as pipocas estalam. 
+Desliga-se, então, o lume mas só se retira a tampa quando o matraquear cessar completamente.
+Agora, o adoçar: o tacho vai a lume brando, com o fundo coberto de açúcar. 
+Deita-se as pipocas dentro do tacho e, quando o açúcar começar a ficar líquido, envolve-se com as pipocas utilizando para o efeito uma colher de pau. 
+Movimenta-se as pipocas em sentido circular para se agarrarem ao açúcar. 
+O tacho sai do lume quando o açúcar se torna amarelado.
+Continua-se a mexer as pipocas até o açúcar desaparecer completamente.
+\end{lstlisting}
 
 %Se estivermos a definir um programa para ser seguido por um ser humano, as instruções que lhe damos são muito diferentes das
 %instruções que dariamos a um computador. 
@@ -76,7 +88,7 @@ O Exemplo~\ref{exe:atenderPorta} ilustra ainda uma outra característica dos pro
 \section{Como Funciona o Processador de um Computador}
 
 
-\section{História Resumida das Linguagens de Programação}
+%\section{História Resumida das Linguagens de Programação}
 
 
 \section{Linguagens de Programação}
@@ -99,11 +111,11 @@ Uma das linguagens mais utilizadas e mais antigas no mundo. A sintaxe é muito p
 O PHP não é bem uma linguagem de programação, no sentido em que não permite a criação de programas de computador como os entendemos geralmente. O PHP não permite criar um programa (com janelas, menus, botões, etc) para ser executado num computador pessoal. Esta linguagem é destinada à criação de páginas Web e, por isso, os programas escritos em PHP não são compilados em código máquina. Um programa PHP é executado pelo servidor Web; por esta razão diz-se que o PHP é uma linguagem de \emph{scripting}%
 \footnote{Uma linguagem de scripting é uma linguagem em que os programas precisam de um outro programa para executar. O PHP precisa de um servidor Web para executar o seu código, por exemplo. O ActionScript precisa do Flash Player para correr...}
 
-\item[ActionScript]
-Uma linguagem de scripting utilizada para programar em Flash.
+%\item[ActionScript]
+%Uma linguagem de scripting utilizada para programar em Flash.
 
-\item[VisualBasic]
-Uma linguagem de programação para o sistema Windows, introduzida pela Microsoft. 
+%\item[VisualBasic]
+%Uma linguagem de programação para o sistema Windows, introduzida pela Microsoft. 
 
 \end{description}
 
@@ -257,14 +269,14 @@ Neste programa, para calcular a pontuação de 18 equipas, precisamos de 72 linh
 {\small
 \begin{verbatim}
 1 - i = 1.
-2 - enquanto i == 18 fazer
+2 - enquanto i <= 18 fazer
     3 - ler jogosGanhosEquipa.
     4 - ler jogosEmpatadosEquipa.
     5 - pontosEquipa = jogosGanhosEquipa * 3 + jogosEmpatadosEquipa.
     6 - escrever pontosEquipa.
     7 - i = i + 1.
 \end{verbatim}}
-Neste caso, colocamos as 4 linhas repetidas do programa anterior dentro daquilo a que chamamos \emph{ciclo} -- uma estrutura repetitiva de código (iteractiva)%
+Neste caso, colocamos as 4 linhas repetidas do programa anterior dentro daquilo a que chamamos \emph{ciclo} -- uma estrutura que repete a execução das linhas de código (iterativa)%
 \footnote{Não confundir \emph{iteractiva} -- que se repete; com \emph{interactivo} -- que permite a troca de informação entre sistema e utilizador.}%
 . 
 Basicamente, o programa utiliza uma variável para contar as equipas que já calculámos: a variável \texttt{i}. Enquanto 
