@@ -7,6 +7,7 @@ Este capítulo pretende dar apenas uma visão geral do que significa programar u
 ``Programar'', no contexto deste manual, significa especificar um conjunto de instruções para serem executadas por uma máquina. No entanto, pode ser instrutivo fazermos a analogia máquina--pessoa para ilustrar alguns conceitos associados à programação de computadores, i.e., pensarmos em exemplos do nosso quotidiano e imaginarmo-nos a ``executar um programa''.
 
 %Estas instruções, ou passos, não são mais do que ``comandos'' que a máquina ou pessoa deve executar para chegar ao objectivo final. 
+Considere, por exemplo, a receita do Exemplo~\ref{exe:receitaPipocas}.
 
 \begin{lstlisting}[caption={Receita de pipocas. Adaptado de \url{http://lifestyle.sapo.pt/sabores/receitas/pipocas-doces-caseiras}.}, label=exe:receitaPipocas]
 Cobre-se o fundo de um tacho com milho sem, no entanto, sobrepor. 
@@ -21,33 +22,53 @@ O tacho sai do lume quando o açúcar se torna amarelado.
 Continua-se a mexer as pipocas até o açúcar desaparecer completamente.
 \end{lstlisting}
 
-%Se estivermos a definir um programa para ser seguido por um ser humano, as instruções que lhe damos são muito diferentes das
-%instruções que dariamos a um computador. 
-Por exemplo, o seguinte programa para abrir a porta quando alguém bate seria facilmente seguido por uma pessoa%
-\footnote{Os programas mostrados nesta secção utilizam uma sintaxe livre, i.e.%
-, não estão escritos numa linguagem de programação particular. Estão escritos em pseudo-código, ou seja, uma linguagem utiliza apenas para comunicar programas entre 
-pessoas. Estes programas não podem ser executados num computador, servem apenas para efeitos de exemplificação dos conceitos básicos.}%
-:
-\begin{lstlisting}[caption=Programa ``Atender a porta'', label=exe:atenderPorta]
-esperar que alguém bata à porta.
-levantar da cadeira.
-dirigir-se à porta.
-abrir a porta.
-perguntar em que pode ajudar.
+Este primeiro exemplo serve para ilustrar algumas características da programação.%
+\footnote{
+Neste manual, os exemplos de código são apresentados com linhas numeradas para facilitar a referência a linhas específicas no texto. Os números propriamente ditos não fazem parte das instruções.
+}%
+
+Primeiro, a ordem das instruções é extremamente importante. A receita não funcionaria se, durante a execução, trocassemos a ordem de das instruções. Por exemplo, não faria sentido trocar as instruções das linhas 1 e 2 e regar o milho com  óleo antes de o colocar no tacho...:
+
+\begin{lstlisting}
+Rega-se o milho com um pouco de óleo e leva-se a lume brando, com o tacho tapado. 
+Cobre-se o fundo de um tacho com milho sem, no entanto, sobrepor. 
+. . . 
 \end{lstlisting}
 
-Este primeiro exemplo serve para ilustrar algumas características da programação.
-Primeiro, a ordem das instruções é extremamente importante; as linhas estão numeradas para dar relevância a esse facto. O programa não funcionaria se a execução trocasse a ordem de uma das instruções para, por exemplo:
 
-\begin{lstlisting}[caption=Programa ``Atender a porta'' com instrução trocada, label=exe:atenderPortaOrdemTrocada]
-levantar da cadeira.
-dirigir-se à porta.
-abrir a porta.
-esperar que alguém bata à porta.
-perguntar em que pode ajudar.
-\end{lstlisting}
+Segundo, as instruções são escritas na forma imperativa. A receita descreve instruções que devemos seguir para a executar convenientement. Também ao programar podemo-nos imaginar a dar ordens a um computador.
 
-Segundo, as instruções são escritas na forma imperativa. Ao programar podemo-nos imaginar a dar ordens a quem executa o programa.
+
+
+%
+%
+%%Se estivermos a definir um programa para ser seguido por um ser humano, as instruções que lhe damos são muito diferentes das
+%%instruções que dariamos a um computador. 
+%Por exemplo, o seguinte programa para abrir a porta quando alguém bate seria facilmente seguido por uma pessoa%
+%\footnote{Os programas mostrados nesta secção utilizam uma sintaxe livre, i.e.%
+%, não estão escritos numa linguagem de programação particular. Estão escritos em pseudo-código, ou seja, uma linguagem utiliza apenas para comunicar programas entre 
+%pessoas. Estes programas não podem ser executados num computador, servem apenas para efeitos de exemplificação dos conceitos básicos.}%
+%:
+%\begin{lstlisting}[caption=Programa ``Atender a porta'', label=exe:atenderPorta]
+%esperar que alguém bata à porta.
+%levantar da cadeira.
+%dirigir-se à porta.
+%abrir a porta.
+%perguntar em que pode ajudar.
+%\end{lstlisting}
+%
+%Este primeiro exemplo serve para ilustrar algumas características da programação.
+%Primeiro, a ordem das instruções é extremamente importante; as linhas estão numeradas para dar relevância a esse facto. O programa não funcionaria se a execução trocasse a ordem de uma das instruções para, por exemplo:
+%
+%\begin{lstlisting}[caption=Programa ``Atender a porta'' com instrução trocada, label=exe:atenderPortaOrdemTrocada]
+%levantar da cadeira.
+%dirigir-se à porta.
+%abrir a porta.
+%esperar que alguém bata à porta.
+%perguntar em que pode ajudar.
+%\end{lstlisting}
+%
+%Segundo, as instruções são escritas na forma imperativa. Ao programar podemo-nos imaginar a dar ordens a quem executa o programa.
 
 O Exemplo~\ref{exe:atenderPorta} ilustra ainda uma outra característica dos programas de computador: a entrada e saída de dados. Um programa não seria muito útil se não produzisse nada que pudesse ser utilizado pela pessoa que o executa. A saída de um programa pode tomar várias formas, e.g., números no ecrã, uma folha de papel na impressora, efeitos visuais, som, actuação física de motores de um robô, etc. Da mesma forma, a maioria dos programas permitem que o utilizador introduza, de alguma forma, dados que serão manipulados por esse programa. A forma mais típica de introdução de dados é através do rato e teclado, mas um programa pode obtê-los através de várias formas, como leitura de um ficheiro previamente escrito, leitura de sensores ligados ao computador, imagens de cameras web, áudio do microfone, etc. 
 
