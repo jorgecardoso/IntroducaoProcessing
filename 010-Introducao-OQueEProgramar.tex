@@ -1,4 +1,4 @@
-\chapterimage{band1.png}
+\chapterimage{out.png}
 \chapter{Introdução - o que é programar?}
 
 Este capítulo pretende dar apenas uma visão geral do que significa programar um computador. O leitor mais ávido por começar a experimentar pode avançar para o próximo capítulo.
@@ -25,7 +25,7 @@ Continua-se a mexer as pipocas até o açúcar desaparecer completamente.
 Este primeiro exemplo serve para ilustrar algumas características da programação de computadores.%
 \footnote{
 Neste manual, os exemplos de código são apresentados com linhas numeradas para facilitar a referência a linhas específicas no texto. Os números propriamente ditos não fazem parte das instruções.
-}%
+} %
 Primeiro, a ordem das instruções é extremamente importante. A receita não funcionaria se, durante a execução, trocassemos a ordem de das instruções. Por exemplo, não faria sentido trocar as instruções das linhas 1 e 2 e regar o milho com  óleo antes de o colocar no tacho...:
 
 \begin{lstlisting}
@@ -110,7 +110,11 @@ A linguagem C, por outro lado é uma linguagem mais tradicional e universal -- s
 Apenas como curiosidade, aqui fica uma pequena lista das linguagens de programação mais comuns:
 \begin{description}
 
-\item[C e C++] são duas linguagens. C++ é uma evolução da linguagem C, que é uma das linguagens mais utilizadas e mais antigas.. Um programa escrito em C tem de ser compilado para código máquina antes de poder ser executado.
+\item[C e C++] são duas linguagens. C++ é uma evolução da linguagem C, que por sua vez é uma das linguagens mais utilizadas e mais antigas. A linguagem C foi originalmente criada por Dennis Ritchie entre 1969 e 1973 e foi usada para implementar um dos sistemas operativos mais poderosos: o Unix. O exemplo seguinte mostra um programa básico escrito em C%
+\footnote{
+Um programa pequeno como este designa-se usualmente por ``Hello World'' por ilustrar a estrutura e funcionalidade mais básicas de uma linguagem.
+}%
+.
 \begin{lstlisting}
 #include <stdio.h>
  
@@ -119,19 +123,23 @@ int main(void)
     printf("hello, world\n");
 }
 \end{lstlisting}
+Quando executado, este programa apenas escreve no ecrã do computador o texto ``Hello World''. (Na verdade o texto é escrito naquilo que se chama a consola e que representa uma área para saída de texto apenas.)
 
-\item[Java] é uma linguagem de programação criada em 1995 como o objectivo de permitir a criação de programas que possam ser executados em várias plataformas sem modificação. A sua utilização tornou-se mais conhecida através das \emph{applets} -- pequenos programas que podem ser executados num browser. Os programas escritos em Java são compilados num código máquina virtual que é depois (aquando da execução do programa) transformado em código máquina real.
+\item[Java] é uma linguagem de programação criada em 1995 como o objectivo de permitir a criação de programas que possam ser executados em várias plataformas sem modificação. A sua utilização tornou-se mais conhecida através das \emph{applets} -- pequenos programas que podem ser executados num browser. 
+%Os programas escritos em Java são compilados num código máquina virtual que é depois (aquando da execução do programa) transformado em código máquina real.
 \begin{lstlisting}
 public class HelloWorld {
 
     public static void main(String[] args) {
         System.out.println("Hello, World");
     }
-
 }
 \end{lstlisting}
 
 \item[Processing] é uma linguagem de programação baseada na linguagem Java. Criada para simplificar a programação em Java e para servir como ferramenta para artistas digitais e para o ensino da programação.
+\begin{lstlisting}
+println("Hello, World");
+\end{lstlisting}
 \begin{lstlisting}
 void setup() {
 	size(400, 400);
