@@ -38,7 +38,9 @@ Cobre-se o fundo de um tacho com milho sem, no entanto, sobrepor.
 Segundo, as instruções são escritas na forma imperativa. A receita descreve instruções que devemos seguir para a executar convenientemente. Também ao programar podemo-nos imaginar a dar ordens a um computador.
 
 O exemplo serve também para chamar a atenção para algumas diferenças entre a programação de um computador e a escrita de uma receita para ser seguida por uma pessoa. Se estivermos a definir um programa (receita) para ser seguido por um ser humano, as instruções que lhe damos são muito diferentes das
-instruções que dariamos a um computador. O programa anterior seria facilmente executado por uma pessoa, mas não por um computador. O programa é demasiado ambíguo para ser executado por uma máquina. Por exemplo, o que significa ``um pouco de óleo''? De que forma se agita o recipiente?
+instruções que daríamos a um computador. O programa anterior seria facilmente executado por uma pessoa, mas não por um computador. O programa é demasiado ambíguo para ser executado por uma máquina. Por exemplo, o que significa ``um pouco de óleo''? De que forma se agita o recipiente? A linguagem natural usada no exemplo anterior serve para os seres humanos que têm naturalmente uma grande capacidade de inferir o significado das instruções pelo contexto onde são dadas. Embora com certeza todos já passamos por situações em que ficámos a pensar "o que quer dizer esta instrução?" ao seguir um manual de instruções, receita culinária, etc.
+
+A linguagem que os computadores ``entendem'' é muito mais precisa do que a linguagem natural que usamos para comunicar entre nós. Ao programar um computador, não pode existir ambiguidade na comunicação das instruções.
 
 %é demasiado vaga para uma máquina -- é necessário especificar qual a porta para onde devemos dirigirmo-nos. Os programas de computador necessitam, por isso, de um conjunto de instruções precisas que o computador (ou melhor, o processador do computador) saiba executar.
 
@@ -94,32 +96,65 @@ instruções que dariamos a um computador. O programa anterior seria facilmente 
 %, Processing, C, Java, ActionScript, PHP, etc.
 
 
-\section{Como Funciona o Processador de um Computador}
+%\section{Como Funciona o Processador de um Computador}
 
 
 %\section{História Resumida das Linguagens de Programação}
 
 
 \section{Linguagens de Programação}
-Existem várias linguagens que podemos utilizar para programar. Algumas apenas funcionam em determinados ambientes, por exemplo, o ActionScript é uma linguagem para programar Flash, ou seja apenas funciona no programa Macromedia Flash.
-O PHP, por outro lado, serve apenas para programar páginas web, i.e., não podemos criar um programa com janelas e botões em PHP.
-A linguagem C, por outro lado é uma linguagem mais tradicional -- serve para escrever programas que correm directamente no computador.
+Existem várias linguagens que podemos utilizar para programar um computador. Algumas apenas funcionam em determinados ambientes, por exemplo, o ActionScript é uma linguagem para programar Flash, ou seja apenas funciona no programa Macromedia Flash.
+O PHP, por outro lado, serve apenas para programar servidores de páginas web, i.e., não podemos criar um programa de desktop com janelas e botões em PHP.
+A linguagem C, por outro lado é uma linguagem mais tradicional e universal -- serve para escrever programas que correm directamente num computador de desktop, assim como programas que correm em servidores.
 
 Apenas como curiosidade, aqui fica uma pequena lista das linguagens de programação mais comuns:
 \begin{description}
-\item[Processing]
-Uma linguagem de programação baseada na linguagem Java. Criada para simplificar a programação em Java e para servir como ferramenta para artistas digitais e para o ensino da programação.
 
-\item[Java] 
-Uma linguagem de programação criada em 1995 como o objectivo de permitir a criação de programas que possam ser executados em várias plataformas sem modificação. A sua utilização tornou-se mais conhecida através das \emph{applets} -- pequenos programas que podem ser executados num browser. Os programas escritos em Java são compilados num código máquina virtual que é depois (aquando da execução do programa) transformado em código máquina real.
+\item[C e C++] são duas linguagens. C++ é uma evolução da linguagem C, que é uma das linguagens mais utilizadas e mais antigas.. Um programa escrito em C tem de ser compilado para código máquina antes de poder ser executado.
+\begin{lstlisting}
+#include <stdio.h>
+ 
+int main(void)
+{
+    printf("hello, world\n");
+}
+\end{lstlisting}
 
-\item[C/C++] 
-Uma das linguagens mais utilizadas e mais antigas no mundo. A sintaxe é muito parecida com a do Java (a sintaxe do Java foi inspirada no C). Um programa escrito em C tem de ser compilado para código máquina antes de poder ser executado.
+\item[Java] é uma linguagem de programação criada em 1995 como o objectivo de permitir a criação de programas que possam ser executados em várias plataformas sem modificação. A sua utilização tornou-se mais conhecida através das \emph{applets} -- pequenos programas que podem ser executados num browser. Os programas escritos em Java são compilados num código máquina virtual que é depois (aquando da execução do programa) transformado em código máquina real.
+\begin{lstlisting}
+public class HelloWorld {
 
-\item[PHP] 
-O PHP não é bem uma linguagem de programação, no sentido em que não permite a criação de programas de computador como os entendemos geralmente. O PHP não permite criar um programa (com janelas, menus, botões, etc) para ser executado num computador pessoal. Esta linguagem é destinada à criação de páginas Web e, por isso, os programas escritos em PHP não são compilados em código máquina. Um programa PHP é executado pelo servidor Web; por esta razão diz-se que o PHP é uma linguagem de \emph{scripting}%
+    public static void main(String[] args) {
+        System.out.println("Hello, World");
+    }
+
+}
+\end{lstlisting}
+
+\item[Processing] é uma linguagem de programação baseada na linguagem Java. Criada para simplificar a programação em Java e para servir como ferramenta para artistas digitais e para o ensino da programação.
+\begin{lstlisting}
+void setup() {
+	size(400, 400);
+}
+ 
+void draw() {
+	line(150, 25, mouseX, mouseY);
+}
+\end{lstlisting}
+
+\item[PHP]  não é bem uma linguagem de programação, no sentido em que não permite a criação de programas de computador como os entendemos geralmente. O PHP não permite criar um programa (com janelas, menus, botões, etc) para ser executado num computador pessoal. Esta linguagem é destinada à criação de páginas Web e, por isso, os programas escritos em PHP não são compilados em código máquina. Um programa PHP é executado pelo servidor Web; por esta razão diz-se que o PHP é uma linguagem de \emph{scripting}%
 \footnote{Uma linguagem de scripting é uma linguagem em que os programas precisam de um outro programa para executar. O PHP precisa de um servidor Web para executar o seu código, por exemplo. O ActionScript precisa do Flash Player para correr...}
 
+\begin{lstlisting}
+<html>
+ <head>
+  <title>PHP Test</title>
+ </head>
+ <body>
+ <?php echo '<p>Hello World</p>'; ?> 
+ </body>
+</html>
+\end{lstlisting}
 %\item[ActionScript]
 %Uma linguagem de scripting utilizada para programar em Flash.
 
