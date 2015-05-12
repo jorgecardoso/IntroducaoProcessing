@@ -168,87 +168,86 @@ Este exemplo cria uma pequena janela gráfica de 400 por 400 pixeis e desenha um
 \end{description}
 
 \subsection{Compilar e Executar}
-Nos primórdios da computação, a programação de um computador era feita usando instruções entendidas directamente pelo computador. Estas instruções são designadas por código máquina. Computadores diferentes (com processadores diferentes) possuem conjuntos de instruções diferentes, pelo que um programa escrito em código máquina apenas executa num determinado tipo de computador. 
-A programação em código máquina era muito trabalhosa e propícia a erros (as instruções são compostas por '0's e '1's), pelo que era necessário pessoal altamentente especializado para efectuar a tarefa de programação de um computador.
+Internamente, um computador trabalha apenas com números. Toda a informação com que trabalhamos quando usamos um computador é representada pelo computador através de números. Um programa de computador é também ele representado por números. 
 
-À medida que a área avançou apareceram novas formas de programar: em vez de escrevermos um programa em código máquina, por que não escrever numa linguagem mais próxima da linguagem natural e fazer um programa que converta entre a linguagem natural (a usada pelo programador) e a linguagem máquina? Foi então que surgiram as primeiras linguagem de programação de alto nível%
-\footnote{Uma linguagem de alto nível é uma linguagem com uma sintaxe mais próxima da linguagem natural do que a linguagem em código máquina.}%
-.
+Nos primeiros computadores, a programação era feita usando instruções entendidas directamente pelo computador (números). Estas instruções são designadas por código máquina. Computadores diferentes (com processadores diferentes) possuem conjuntos de instruções diferentes, pelo que um programa escrito em código máquina apenas executa num determinado tipo de computador. 
+A programação em código máquina era muito trabalhosa e propícia a erros, pelo que foram criadas linguagens de programação  mais próximas da nossa linguagem natural. No entanto, a introdução destas linguagens obriga a uma conversão entre o código escrito pelo programador, o chamado código fonte, e o código máquina. O processo de conversão chama-se compilação.
+
 
 Associado às linguagens de alto nível está um tipo de programa especial: o compilador. O compilador não é mais do que um programa que converte o programa escrito pelo programador em linguagem de alto nível para código máquina de forma a poder ser executado pelo computador. O programa escrito pelo programador é designado por \emph{código fonte}.
 
-
-\section{Lógica e Sintaxe}
-O código fonte de um programa pode ser visto de duas perspectivas: da lógica do programa; e da sintaxe.
-
-Uma determinada linguagem de programação é definida principalmente pela sua sintaxe, ou seja pelas regras que definem o que é um programa bem escrito. Da mesma forma que a sintaxe da língua Portuguesa define as regras de construção de frases, também a sintaxe da linguagem de programação define as regras de construção de um programa escrito nessa linguagem. Por exemplo, a frase ``O João foi às compras.'', está de acordo com as regras, mas ``O João às foi compras.'', não está. Apesar de o significado de ambas as frases ser óbvio e idêntico: o João foi às compras, a segunda quebra as regras da construção de frases em Português.
-
-A lógica de um programa equivale ao seu significado. No exemplo anterior a lógica (significado) da frase era óbvia, mas estava mal construida. Também um programa pode estar logicamente correcto, mas sintacticamente incorrecto. Um programa sintacticamente incorrecto não pode ser compilado (os compiladores não são ``suficientemente inteligentes'' para perceberem o significado do programa de modo a corrigirem a sintaxe). Os erros sintácticos são facilmente detectados pelo compilador.
-De forma inversa, um programa pode estar sintacticamente correcto, mas logicamente não. Nestes casos, o programa é compilado e executado, mas o resultado não é o que o programador estava à espera. Estes erros são mais difíceis de detectar!
-
-
-
-
-\section{Nível de Detalhe}
-Quando escrevemos um programa em Português a que nível de detalhe devemos ir na especificação das instruções?
-Por exemplo, se quisermos escrever um programa para uma pessoa mudar um pneu de um carro podemos ter algo como o seguinte:
-\begin{verbatim}
-1 - sair do carro.
-2 - abrir a mala do carro.
-3 - tirar pneu sobresselente.
-4 - tirar macaco.
-5 - tirar chave.
-6 - desapertar ligeiramente as porcas do pneu.
-7 - colocar o macaco debaixo do carro.
-8 - dar \'a manivela até o pneu ficar suficientemente levantado.
-9 - desapertar as porcas na totalidade.
-10 - retirar o pneu furado.
-11 - colocar o pneu novo.
-12 - apertar as porcas.
-13 - baixar o carro.
-14 - retirar o macaco.
-15 - apertar bem as porcas.
-16 - guardar chave.
-17 - guardar macaco.
-18 - guardar pneu furado.
-\end{verbatim}
-
-Mas, estamos a assumir que a pessoa sabe fazer uma série de coisas, como sair do carro, abrir a mala, etc.
-Cada um dos passos do nosso programa anterior pode ele mesmo ser um programa em si. Por exemplo sair do carro:
-\begin{verbatim}
-1 - desligar o carro.
-2 - apertar o travão de mão.
-3 - retirar o cinto de segurança.
-4 - retirar a chave da ignição.
-5 - abrir a porta.
-6 - sair.
-7 - fechar a porta.
-\end{verbatim}
-
-Então, a que nível de detalhe deveremo ir quando estamos a escrever um programa? No caso de um programa para ser executado por uma pessoa, devemos descer ao nível de detalhe suficiente para a pessoa conseguir executar cada passo. Obviamente, isto depende da tarefa e da pessoa.
-
-No caso de um programa de computador, o problema não se coloca a este nível. Ao utilizarmos uma determinada linguagem de programação, estamos automaticamente limitados às instruções mais básicas fornecidas por essa linguagem. Por exemplo, no caso do desenho num ecrã, algumas linguagens apenas possuem instruções para desenhar um pixel numa determinada posição do ecrã. Neste caso, se quisermos fazer uma programa para desenhar uma linha vertical teriamos de fazer algo do género:
-\begin{verbatim}
-1 - desenhar pixel na primeira posicao da linha.
-2 - avancar um pixel na vertical.
-3 - desenhar um pixel na nova posicao.
-4 - repetir o passo 2 até chegar ao final da linha.
-\end{verbatim}
-
-Outras linguagens têm instruções para desenhar linhas, pelo que o programa anterior se resumiria a uma única instrução:
-\begin{verbatim}
-1 - desenhar linha vertical.
-\end{verbatim}
-
-Ou seja, quando programamos um computador temos de utilizar as instruções fornecidas pela linguagem que estamos a utilizar. Daí que algumas linguagens sejam mais aplicadas nalguns tipos de programas -- possuem instruções que facilitam a escrita de determinados programas.
-
-No entanto, o problema do nível de detalhe coloca-se sob outra perpectiva quando programamos um computador. Todas as linguagens permitem-nos definir as nossas próprias instruções compostas por sequências maiores de instruções básicas. Por exemplo, no caso da linguagem que apenas permite desenhar um pixel numa posição do ecrã, poderiamos compor uma nova instrução: \texttt{desenharLinhaVertical}, à custa dos passos do nosso programa exemplo. Assim, sempre que quisessemos desenhar uma linha vertical no ecrã bastava usar a nova instrução:
-\begin{verbatim}
-1 - desenharLinhaVertical.
-\end{verbatim}
-
-Quando escrevemos um programa devemos pensar em agrupar conjuntos de instruções de forma a termos ao nosso dispor instruções que efectuam vários passos de cada vez. 
-A questão agora é saber que instruções agrupar. Novamente, não há uma resposta única. Depende do programa. É uma questão de experiência (e, às vezes, de estilo do programador).
+%
+%\section{Lógica e Sintaxe}
+%O código fonte de um programa pode ser visto de duas perspectivas: da lógica do programa; e da sintaxe.
+%
+%Uma determinada linguagem de programação é definida principalmente pela sua sintaxe, ou seja pelas regras que definem o que é um programa bem escrito. Da mesma forma que a sintaxe da língua Portuguesa define as regras de construção de frases, também a sintaxe da linguagem de programação define as regras de construção de um programa escrito nessa linguagem. Por exemplo, a frase ``O João foi às compras.'', está de acordo com as regras, mas ``O João às foi compras.'', não está. Apesar de o significado de ambas as frases ser óbvio e idêntico: o João foi às compras, a segunda quebra as regras da construção de frases em Português.
+%
+%A lógica de um programa equivale ao seu significado. No exemplo anterior a lógica (significado) da frase era óbvia, mas estava mal construida. Também um programa pode estar logicamente correcto, mas sintacticamente incorrecto. Um programa sintacticamente incorrecto não pode ser compilado (os compiladores não são ``suficientemente inteligentes'' para perceberem o significado do programa de modo a corrigirem a sintaxe). Os erros sintácticos são facilmente detectados pelo compilador.
+%De forma inversa, um programa pode estar sintacticamente correcto, mas logicamente não. Nestes casos, o programa é compilado e executado, mas o resultado não é o que o programador estava à espera. Estes erros são mais difíceis de detectar!
+%
+%
+%
+%
+%\section{Nível de Detalhe}
+%Quando escrevemos um programa em Português a que nível de detalhe devemos ir na especificação das instruções?
+%Por exemplo, se quisermos escrever um programa para uma pessoa mudar um pneu de um carro podemos ter algo como o seguinte:
+%\begin{verbatim}
+%1 - sair do carro.
+%2 - abrir a mala do carro.
+%3 - tirar pneu sobresselente.
+%4 - tirar macaco.
+%5 - tirar chave.
+%6 - desapertar ligeiramente as porcas do pneu.
+%7 - colocar o macaco debaixo do carro.
+%8 - dar \'a manivela até o pneu ficar suficientemente levantado.
+%9 - desapertar as porcas na totalidade.
+%10 - retirar o pneu furado.
+%11 - colocar o pneu novo.
+%12 - apertar as porcas.
+%13 - baixar o carro.
+%14 - retirar o macaco.
+%15 - apertar bem as porcas.
+%16 - guardar chave.
+%17 - guardar macaco.
+%18 - guardar pneu furado.
+%\end{verbatim}
+%
+%Mas, estamos a assumir que a pessoa sabe fazer uma série de coisas, como sair do carro, abrir a mala, etc.
+%Cada um dos passos do nosso programa anterior pode ele mesmo ser um programa em si. Por exemplo sair do carro:
+%\begin{verbatim}
+%1 - desligar o carro.
+%2 - apertar o travão de mão.
+%3 - retirar o cinto de segurança.
+%4 - retirar a chave da ignição.
+%5 - abrir a porta.
+%6 - sair.
+%7 - fechar a porta.
+%\end{verbatim}
+%
+%Então, a que nível de detalhe deveremo ir quando estamos a escrever um programa? No caso de um programa para ser executado por uma pessoa, devemos descer ao nível de detalhe suficiente para a pessoa conseguir executar cada passo. Obviamente, isto depende da tarefa e da pessoa.
+%
+%No caso de um programa de computador, o problema não se coloca a este nível. Ao utilizarmos uma determinada linguagem de programação, estamos automaticamente limitados às instruções mais básicas fornecidas por essa linguagem. Por exemplo, no caso do desenho num ecrã, algumas linguagens apenas possuem instruções para desenhar um pixel numa determinada posição do ecrã. Neste caso, se quisermos fazer uma programa para desenhar uma linha vertical teriamos de fazer algo do género:
+%\begin{verbatim}
+%1 - desenhar pixel na primeira posicao da linha.
+%2 - avancar um pixel na vertical.
+%3 - desenhar um pixel na nova posicao.
+%4 - repetir o passo 2 até chegar ao final da linha.
+%\end{verbatim}
+%
+%Outras linguagens têm instruções para desenhar linhas, pelo que o programa anterior se resumiria a uma única instrução:
+%\begin{verbatim}
+%1 - desenhar linha vertical.
+%\end{verbatim}
+%
+%Ou seja, quando programamos um computador temos de utilizar as instruções fornecidas pela linguagem que estamos a utilizar. Daí que algumas linguagens sejam mais aplicadas nalguns tipos de programas -- possuem instruções que facilitam a escrita de determinados programas.
+%
+%No entanto, o problema do nível de detalhe coloca-se sob outra perpectiva quando programamos um computador. Todas as linguagens permitem-nos definir as nossas próprias instruções compostas por sequências maiores de instruções básicas. Por exemplo, no caso da linguagem que apenas permite desenhar um pixel numa posição do ecrã, poderiamos compor uma nova instrução: \texttt{desenharLinhaVertical}, à custa dos passos do nosso programa exemplo. Assim, sempre que quisessemos desenhar uma linha vertical no ecrã bastava usar a nova instrução:
+%\begin{verbatim}
+%1 - desenharLinhaVertical.
+%\end{verbatim}
+%
+%Quando escrevemos um programa devemos pensar em agrupar conjuntos de instruções de forma a termos ao nosso dispor instruções que efectuam vários passos de cada vez. 
+%A questão agora é saber que instruções agrupar. Novamente, não há uma resposta única. Depende do programa. É uma questão de experiência (e, às vezes, de estilo do programador).
 
 \section{Conceitos Básicos de Um Programa}
 Quando criamos programas, ou, de forma mais genérica, quando pensamos em algoritmos, existem alguns conceitos fundamentais que são comuns a todos eles: \emph{memória}, \emph{selecção} e \emph{iteracção}.
