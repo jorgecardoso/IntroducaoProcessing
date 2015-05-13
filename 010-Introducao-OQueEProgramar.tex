@@ -391,48 +391,51 @@ O programa principal torna-se assim mais fácil de ler e de entender que calcula
 
 
 
-\section{Exercícios}
-
-\subsection{Resolvidos}
+\section{Exercícios Resolvidos}
 
 \begin{enumerate}
 	\item \label{exe:1_1} Escreva um programa em linguagem natural para ligar os computadores de uma sala de aulas. Escreva o programa para ser seguido por uma pessoa. O programa deve ter pelo menos uma tomada de decisão.
 	
 	\item \label{exe:1_2} Baseando-se no programa que escreveu no ponto anterior, substitua cada instrução desse programa por um conjunto de instruções mais detalhadas.
 	
-	\item \label{exe:1_3} 
+	\item \label{exe:1_3} Baseando-se no programa que escreveu no ponto anterior, tente agrupar conjuntos de instruções em funções, de forma a tornar o programa mais fácil de ler.
 \end{enumerate}
 
-\subsection{Para Resolver}
+
+
+\section{Exercícios para Resolver}
 \begin{enumerate}
 \item 
-Pensar num programa que possa ser facilmente implementado por um colega seu na sala de aula. Escrever esse programa.  O programa deve ter mais de 10 instruções, deve ter pelo menos uma estrutura de selecção ou iteracção e deve poder ser executado em menos de 5 minutos.
+Pensar num programa que possa ser facilmente implementado por um colega seu na sala de aula. Escrever esse programa.  O programa deve ter mais de 10 instruções, deve ter pelo menos uma estrutura de selecção ou iteração e deve poder ser executado em menos de 5 minutos.
 
 \item Escreva o programa anterior com um nível de detalhe maior.
 
-\item (Tentar) Agrupar as novas instruções em conjuntos de instruções maiores e diferentes do original.
+\item Agrupar algumas instruções do programa anterior em funções de forma a tornar o programa mais legível.
 \end{enumerate}
 
-\subsection{Resolução dos Exercícios Resolvidos}
 
-{\footnotesize
-\subsubsection*{Exercício \ref{exe:1_1}}
-\begin{verbatim}
-Programa Ligar os Computadores da Sala
 
-1 - Dirigir-se ao primeiro computador.
-2 - Carregar no botão de ``power'' do computador.
-3 - Carregar no botão de ``power'' do monitor.
-4 - Se computador não ligou
-    5 - Verificar cabos de alimentação
-    6 - Repetir o passo 2.
-7 - Verificar se há mais computadores     
-8 - Se houver mais computadores então
-    9 - Dirigir-se ao computador seguinte.
-    10 - Repetir o passo 2.
-11 - Senão
-    12 - Termina.    
-\end{verbatim}}
+\clearpage
+\section{Resolução dos Exercícios Resolvidos}
+
+
+\subsubsection*{Exercício Resolvido \ref{exe:1_1}}
+\begin{lstlisting}
+//Programa Ligar os Computadores da Sala
+
+Dirigir-se ao primeiro computador.
+Carregar no botão de ``power'' do computador.
+Carregar no botão de ``power'' do monitor.
+Se computador não ligou
+	Verificar cabos de alimentação
+	Repetir o passo 3.
+Verificar se há mais computadores     
+Se houver mais computadores então
+	Dirigir-se ao computador seguinte.
+	Repetir o passo 3.
+Senão
+	Termina.    
+\end{lstlisting}
 \paragraph{Notas}
 Este programa funciona apenas se determinadas condições se verificarem. Uma vez que 
 não colocámos instruções para verificar se o computador já estava ligado, caso
@@ -441,65 +444,64 @@ pretendido é necessário que todos estejam desligados.
 
 
 \subsubsection*{Exercício \ref{exe:1_2}}
-{\footnotesize
-\begin{verbatim}
-Programa Ligar os Computadores da Sala (mais detalhe)
 
-1 - Dirigir-se ao primeiro computador.
-2 - Verificar se o computador está desligado.
-3 - Se o computador estiver desligado então
-    4 - Identificar botão de ``power'' do computador.
-    5 - Levantar a mão e esticar o dedo indicador.
-    6 - Pressionar o botão de ``power'' do computador.
-7 - Verificar se o monitor está desligado.
-8 - Se o monitor estiver desligado então
-    9 - Identificar botão de ``power'' do monitor.
-    10 - Levantar a mão e esticar o dedo indicador.
-    11 - Pressionar o botão de ``power'' do monitor.
-12 - Se computador não ligou
-    13 - Verificar cabos de alimentação do computador.
-    14 - Verificar os cabos de alimentação do monitor.
-    15 - Repetir o passo 3.
-16 - Verificar se há mais computadores     
-17 - Se houver mais computadores então
-    18 - Dirigir-se ao computador seguinte.
-    19 - Repetir o passo 2.
-20 - Senão
-    21 - Termina.    
-\end{verbatim}}
+\begin{lstlisting}
+//Programa Ligar os Computadores da Sala (mais detalhe)
+
+Dirigir-se ao primeiro computador.
+Verificar se o computador está desligado.
+Se o computador estiver desligado então
+	Identificar botão de ``power'' do computador.
+	Levantar a mão e esticar o dedo indicador.
+	Pressionar o botão de ``power'' do computador.
+Verificar se o monitor está desligado.
+Se o monitor estiver desligado então
+	Identificar botão de ``power'' do monitor.
+	Levantar a mão e esticar o dedo indicador.
+	Pressionar o botão de ``power'' do monitor.
+Se computador não ligou
+	Verificar cabos de alimentação do computador.
+	Verificar os cabos de alimentação do monitor.
+	Repetir o passo 5.
+Verificar se há mais computadores     
+Se houver mais computadores então
+	Dirigir-se ao computador seguinte.
+	Repetir o passo 24.
+Senão
+	Termina.    
+\end{lstlisting}
 
 \subsubsection*{Exercício \ref{exe:1_3}}
-{\footnotesize
-\begin{verbatim}
-Programa Ligar os Computadores da Sala (mais detalhe)
+\begin{lstlisting}
+//Programa Ligar os Computadores da Sala (mais detalhe)
 
-Instrução Ligar o Computador:
-1 - Verificar se o computador está desligado.
-2 - Se o computador estiver desligado então
-    3 - Identificar botão de ``power'' do computador.
-    4 - Levantar a mão e esticar o dedo indicador.
-    5 - Pressionar o botão de ``power'' do computador.
-6 - Fim Instrução    
+Dirigir-se ao primeiro computador.
+Ligar o Computador
+Ligar o Monitor
+Se computador não ligou
+	Verificar cabos de alimentação do computador.
+	Verificar os cabos de alimentação do monitor.
+	Repetir o passo 4.
+Verificar se há mais computadores     
+Se houver mais computadores então
+	Dirigir-se ao computador seguinte.
+	Repetir o passo 4.
+Senão
+	Termina.
+    
+    
+Função Ligar o Computador:
+	Verificar se o computador está desligado.
+	Se o computador estiver desligado então
+		Identificar botão de ``power'' do computador.
+		Levantar a mão e esticar o dedo indicador.
+		Pressionar o botão de ``power'' do computador.
 
-Instrução Ligar o Monitor:
-1 - Verificar se o monitor está desligado.
-2 - Se o monitor estiver desligado então
-    3 - Identificar botão de ``power'' do monitor.
-    4 - Levantar a mão e esticar o dedo indicador.
-    5 - Pressionar o botão de ``power'' do monitor.
-6 - Fim Instrução
 
-1 - Dirigir-se ao primeiro computador.
-2 - [Ligar o Computador]
-3 - [Ligar o Monitor]
-12 - Se computador não ligou
-    13 - Verificar cabos de alimentação do computador.
-    14 - Verificar os cabos de alimentação do monitor.
-    15 - Repetir o passo 2.
-16 - Verificar se há mais computadores     
-17 - Se houver mais computadores então
-    18 - Dirigir-se ao computador seguinte.
-    19 - Repetir o passo 2.
-20 - Senão
-    21 - Termina.
-\end{verbatim}}
+Função Ligar o Monitor:
+	Verificar se o monitor está desligado.
+	Se o monitor estiver desligado então
+		Identificar botão de ``power'' do monitor.
+		Levantar a mão e esticar o dedo indicador.
+		Pressionar o botão de ``power'' do monitor.
+\end{lstlisting}
