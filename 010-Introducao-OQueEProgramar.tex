@@ -261,23 +261,27 @@ Neste manual, o compilador é algo que está ``escondido'' e com o qual não tem
 %A questão agora é saber que instruções agrupar. Novamente, não há uma resposta única. Depende do programa. É uma questão de experiência (e, às vezes, de estilo do programador).
 
 \section{Conceitos Básicos de Um Programa}
-Quando criamos programas, ou, de forma mais genérica, quando pensamos em algoritmos, existem alguns conceitos fundamentais que são comuns a todos eles: \emph{memória}, \emph{selecção} e \emph{iteração}.
+Quando criamos programas, ou, de forma mais genérica, quando pensamos em algoritmos, existem alguns conceitos fundamentais que são comuns a todos eles: \emph{memória}, \emph{selecção}, \emph{iteração} e \emph{abstracção}.
 
-\begin{description}
-\item[memória\footnote{O conceito de memória será aprofundado no Capítulo~\ref{cap:memoria}.}]
+\begin{description} \itemsep5pt %\parskip0pt \parsep0pt
+\item[Memória]O conceito de memória será aprofundado no Capítulo~\ref{cap:memoria}.
 A memória é o que permite ao nosso programa guardar dados temporários ou intermédios para serem utilizados mais tarde.
-Por exemplo, se pretendêssemos criar um programa para calcular os pontos de uma equipa no campeonato de futebol faríamos algo do género:
+Por exemplo, se pretendêssemos criar um programa para calcular os pontos de uma equipa no campeonato de futebol faríamos algo do género\footnote{
+Este exemplo está escrito em pseudo-código -- uma linguagem sem uma sintaxe formalmente definida, mas em que o significado das instruções é mais ou menos óbvio. O pseudo-código é bom para explicar um algoritmo a outra pessoa, mas não é compilável para correr num computador.
+}%
+:
 \begin{lstlisting}
 ler jogosGanhos.
 ler jogosEmpatados.
-pontos = jogosGanhos * 3 + jogosEmpatados.
+pontos = jogosGanhos * 3 + jogosEmpatados * 1.
 escrever pontos.
 \end{lstlisting}
 No programa anterior a instrução \texttt{ler}, coloca numa \emph{variável} um valor fornecido pelo utilizador. Uma variável
 é a memória do nosso programa. É como uma gaveta com nome, na qual podemos guardar valores para mais tarde utilizar.
-O programa anterior precisa de guardar os valores do número de jogos ganhos e empatados para poder efectuar a operação matemática que devolve o número de pontos no campeonato. O resultado desse cálculo, é, ele mesmo, colocado também numa ``gaveta'' para posterior utilização. Uma vez colocados na ``gaveta'' (variável), os dados podem ser consultados em qualquer altura (ponto de execução) do nosso programa. 
+O programa anterior precisa de guardar os valores do número de jogos ganhos e empatados para poder efectuar a operação matemática que devolve o número de pontos no campeonato. O resultado desse cálculo, é, ele mesmo, colocado também numa ``gaveta'' para posterior utilização. Uma vez colocados na ``gaveta'', os dados podem ser consultados em qualquer altura (ponto de execução) do nosso programa. 
 
-\item[selecção] \footnote{O conceito de selecção será aprofundado no Capítulo~\ref{cap:seleccao}.}
+
+\item[Selecção] O conceito de selecção será aprofundado no Capítulo~\ref{cap:seleccao}.
 O conceito de \emph{selecção} está associado ao caminho executado pelo nosso programa. Um programa pode ser visto como uma árvore: a execução começa por um ponto comum -- o tronco, e, à medida que o programa executa, pode percorrer um ramo ou outro, dependendo das circunstâncias no momento da execução.
 Por exemplo, no programa seguinte:
 \begin{lstlisting}
@@ -287,7 +291,7 @@ ler jogosGanhosSLB.
 ler jogosEmpatadosSLB.
 pontosFCP = jogosGanhosFCP * 3 + jogosEmpatadosFCP.
 pontosSLB = jogosGanhosSLB * 3 + jogosEmpatadosSLB.
-se pontosFCP > pontosSLB então
+se pontosFCP > pontosSLB então 
 	escrever "O FCP está à frente do SLB".
 senão
 	escrever "O SLB está à frente do FCP".     
@@ -295,51 +299,94 @@ senão
 
 existe um ``tronco'' comum a todas as execuções do programa -- as linhas de 1 a 7.
 No entanto, consoante a pontuação de uma e outra equipa, o programa pode percorrer o ramo 8 -- se o FCP tiver mais pontos que o SLB, ou o ramo 10 -- se o SLB tiver mais pontos que o FCP.
-A linha 7 -- \texttt{se pontosFCP > pontosSLB}%
-\footnote{O símbolo ``>'' significa ``maior do que''.}
-\emph{selecciona} o ramo%
+A linha\footnote{O símbolo ``>'' significa ``maior do que''.}: 
+\begin{lstlisting}[firstnumber=7]
+se pontosFCP > pontosSLB então      
+\end{lstlisting}
+
+\emph{selecciona} o ramo a executar no programa.%
 \footnote{As linhas 8 e 10 estão \emph{indentadas}, isto é, escritas mais à direita, para facilitar a leitura do programa. Desta forma é óbvio que o ramo 8 corresponde à condição ser verdadeira e o 10 à condição falsa. Caso contrário, não seria facilmente perceptível que o programa contém ramos.}
-a executar no programa.
 
-\item[iteracção]\footnote{O conceito de iteracção será aprofundado no Capítulo~\ref{cap:iteraccao}.}
-A maior parte dos programas que escrevemos contêm partes que são repetidas várias vezes. Por exemplo, se quisermos calcular as pontuações de todas as equipas do campeonato, poderiamos construir um programa do género:
-{\small
-\begin{verbatim}
-1 - ler jogosGanhosEquipa1.
-2 - ler jogosEmpatadosEquipa1.
-3 - pontosEquipa1 = jogosGanhosEquipa1 * 3 + jogosEmpatadosEquipa1.
-4 - escrever pontosEquipa1.
-5 - ler jogosGanhosEquipa2.
-6 - ler jogosEmpatadosEquipa2.
-7 - pontosEquipa2 = jogosGanhosEquipa2 * 3 + jogosEmpatadosEquipa2.
-8 - escrever pontosEquipa2.
-9 - ler jogosGanhosEquipa3.
-10 - ler jogosEmpatadosEquipa3.
-11 - pontosEquipa3 = jogosGanhosEquipa3 * 3 + jogosEmpatadosEquipa3.
-12 - escrever pontosEquipa3.
+\item[Iteração] O conceito de iteracção será aprofundado no Capítulo~\ref{cap:iteraccao}.
+A maior parte dos programas que escrevemos contêm partes que são repetidas várias vezes. Por exemplo, se quisermos calcular as pontuações de todas as equipas do campeonato, poderíamos construir um programa do género:
+
+\begin{lstlisting}
+ler jogosGanhosEquipa1.
+ler jogosEmpatadosEquipa1.
+pontosEquipa1 = jogosGanhosEquipa1 * 3 + jogosEmpatadosEquipa1.
+escrever pontosEquipa1.
+ler jogosGanhosEquipa2.
+ler jogosEmpatadosEquipa2.
+pontosEquipa2 = jogosGanhosEquipa2 * 3 + jogosEmpatadosEquipa2.
+escrever pontosEquipa2.
+ler jogosGanhosEquipa3.
+ler jogosEmpatadosEquipa3.
+pontosEquipa3 = jogosGanhosEquipa3 * 3 + jogosEmpatadosEquipa3.
+escrever pontosEquipa3.
 ...
-68 - ler jogosGanhosEquipa18.
-70 - ler jogosEmpatadosEquipa18.
-71 - pontosEquipa18 = jogosGanhosEquipa18 * 3 + jogosEmpatadosEquipa18.
-72 - escrever pontosEquipa18.
-\end{verbatim}}
-Neste programa, para calcular a pontuação de 18 equipas, precisamos de 72 linhas de código! No entanto, se olharmos bem, as linhas são muito parecidas -- as primeiras 4 linhas repetem-se ao longo do programa. Existe uma estrutura que nos permite economizar linhas de código: o \emph{ciclo}. Vejamos o seguinte programa:
-{\small
-\begin{verbatim}
-1 - i = 1.
-2 - enquanto i <= 18 fazer
-    3 - ler jogosGanhosEquipa.
-    4 - ler jogosEmpatadosEquipa.
-    5 - pontosEquipa = jogosGanhosEquipa * 3 + jogosEmpatadosEquipa.
-    6 - escrever pontosEquipa.
-    7 - i = i + 1.
-\end{verbatim}}
-Neste caso, colocamos as 4 linhas repetidas do programa anterior dentro daquilo a que chamamos \emph{ciclo} -- uma estrutura que repete a execução das linhas de código (iterativa)%
-\footnote{Não confundir \emph{iteractiva} -- que se repete; com \emph{interactivo} -- que permite a troca de informação entre sistema e utilizador.}%
-. 
-Basicamente, o programa utiliza uma variável para contar as equipas que já calculámos: a variável \texttt{i}. Enquanto 
-codificação.
+ler jogosGanhosEquipa18.
+ler jogosEmpatadosEquipa18.
+pontosEquipa18 = jogosGanhosEquipa18 * 3 + jogosEmpatadosEquipa18.
+escrever pontosEquipa18.
+\end{lstlisting}
+Neste programa, para calcular a pontuação de 18 equipas, precisamos de 72 linhas de código! No entanto, se olharmos bem, as linhas são muito parecidas -- as primeiras 4 linhas repetem-se ao longo do programa. Existe uma estrutura que nos permite economizar linhas de código: o \emph{ciclo}:
 
+\begin{lstlisting}
+i = 1.
+enquanto i <= 18 fazer:
+	ler jogosGanhosEquipa.
+    ler jogosEmpatadosEquipa.
+    pontosEquipa = jogosGanhosEquipa * 3 + jogosEmpatadosEquipa.
+    escrever pontosEquipa.
+    i = i + 1.
+\end{lstlisting}
+Neste caso, colocamos as 4 linhas repetidas do programa anterior dentro daquilo a que chamamos \emph{ciclo} -- uma estrutura que itera a execução das linhas de código%
+\footnote{Não confundir \emph{iterativo} -- que se repete; com \emph{interactivo} -- que permite a troca de informação entre sistema e utilizador.}%
+. 
+Basicamente, o programa utiliza uma variável para contar as equipas que já calculámos: a variável \texttt{i}.
+
+\item[Abstracção] O conceito de iteracção será aprofundado no Capítulo~\ref{cap:funcoes}. A abstracção permite-nos criar programas altamente complexos, dividindo-os em componentes mais simples. Por exemplo, vamos supor que queríamos calcular a soma de dois factoriais%
+\footnote{O factorial de um número é o produto de todos os números inteiros positivos menores ou iguais a esse número.}:
+\begin{lstlisting} 
+ler numero1.
+i = 1.
+factorial1 = 1.
+enquanto i <= numero1 fazer:
+	factorial1 = factorial1*i.
+	i = i + 1.
+
+ler numero2.
+i = 1
+factorial2 = 1.
+enquanto i <= numero2 fazer:
+	factorial2 = factorial2*i.
+	i = i + 1.
+
+soma =  factorial1 + factorial2.
+escrever soma.
+\end{lstlisting}
+A leitura deste programa pode ser simplificada se criarmos uma \emph{função} para calcular o factorial:
+\begin{lstlisting} 
+ler numero1.
+factorial1 = calculaFactorial(numero1).
+
+ler numero2.
+factorial2 = calculaFactorial(numero2).
+
+soma =  factorial1 + factorial2.
+escrever soma.
+
+
+função calculaFactorial(numero) 
+	i = 1.
+	factorial = 1.
+	enquanto i <= numero fazer:
+		factorial = factorial*i.
+		i = i + 1.
+	devolve factorial
+
+\end{lstlisting}
+O programa principal torna-se assim mais fácil de ler e de entender que calcula a soma de dois factoriais. A função é uma estrutura que nos permite não só abstrair da complexidade da implementação do cálculo do factorial, como reutilizar o código que faz esse cálculo.
 \end{description}
 
 
