@@ -170,11 +170,22 @@ Este exemplo cria uma pequena janela gráfica de 400 por 400 pixeis e desenha um
 \subsection{Compilar e Executar}
 Internamente, um computador trabalha apenas com números. Toda a informação com que trabalhamos quando usamos um computador é representada pelo computador através de números. Um programa de computador é também ele representado por números. 
 
-Nos primeiros computadores, a programação era feita usando instruções entendidas directamente pelo computador (números). Estas instruções são designadas por código máquina. Computadores diferentes (com processadores diferentes) possuem conjuntos de instruções diferentes, pelo que um programa escrito em código máquina apenas executa num determinado tipo de computador. 
-A programação em código máquina era muito trabalhosa e propícia a erros, pelo que foram criadas linguagens de programação  mais próximas da nossa linguagem natural. No entanto, a introdução destas linguagens obriga a uma conversão entre o código escrito pelo programador, o chamado código fonte, e o código máquina. O processo de conversão chama-se compilação.
+Nos primeiros computadores, a programação era feita usando instruções entendidas directamente pelo computador (números). Estas instruções são designadas por código máquina. 
+%Computadores diferentes (com processadores diferentes) possuem conjuntos de instruções diferentes, pelo que um programa escrito em código máquina apenas executa num determinado tipo de computador. 
+A programação em código máquina era muito trabalhosa e propícia a erros, pelo que foram criadas linguagens de programação  mais próximas da nossa linguagem natural. No entanto, a introdução destas linguagens obriga a uma conversão entre o código escrito pelo programador, o chamado código fonte, e o código máquina. O processo de conversão chama-se compilação (ver Figura~\ref{fig:processo-compilacao}). 
 
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width=8cm]{images/DiagramaCompilacao.pdf}
+	\caption{Processo de compilação.}
+	\label{fig:processo-compilacao}
+\end{figure}
 
-Associado às linguagens de alto nível está um tipo de programa especial: o compilador. O compilador não é mais do que um programa que converte o programa escrito pelo programador em linguagem de alto nível para código máquina de forma a poder ser executado pelo computador. O programa escrito pelo programador é designado por \emph{código fonte}.
+O processo de compilação consiste em analisar o código fonte para verificar se está de acordo com as regras gramaticais da linguagem que se está a usar e em converter esse código fonte em código máquina. A ferramenta que se usa para compilar é ela própria um programa de computador -- o compilador. 
+
+O resultado da compilação é um ficheiro (ou conjunto de ficheiros) que podem ser executados.
+
+Neste manual, o compilador é algo que está ``escondido'' e com o qual não temos de nos preocupar na maioria das situações. No próximo capítulo, veremos na prática como escrever e executar os nossos programas.
 
 %
 %\section{Lógica e Sintaxe}
@@ -250,18 +261,18 @@ Associado às linguagens de alto nível está um tipo de programa especial: o co
 %A questão agora é saber que instruções agrupar. Novamente, não há uma resposta única. Depende do programa. É uma questão de experiência (e, às vezes, de estilo do programador).
 
 \section{Conceitos Básicos de Um Programa}
-Quando criamos programas, ou, de forma mais genérica, quando pensamos em algoritmos, existem alguns conceitos fundamentais que são comuns a todos eles: \emph{memória}, \emph{selecção} e \emph{iteracção}.
+Quando criamos programas, ou, de forma mais genérica, quando pensamos em algoritmos, existem alguns conceitos fundamentais que são comuns a todos eles: \emph{memória}, \emph{selecção} e \emph{iteração}.
 
 \begin{description}
-\item[memória]\footnote{O conceito de memória será aprofundado no Capítulo~\ref{cap:memoria}.}
+\item[memória\footnote{O conceito de memória será aprofundado no Capítulo~\ref{cap:memoria}.}]
 A memória é o que permite ao nosso programa guardar dados temporários ou intermédios para serem utilizados mais tarde.
-Por exemplo, se pretendessemos criar um programa para calcular os pontos da equipa do FCP no campeonato fariamos algo do género:
-\begin{verbatim}
-1 - ler jogosGanhos.
-2 - ler jogosEmpatados.
-4 - pontos = jogosGanhos * 3 + jogosEmpatados.
-5 - escrever pontos.
-\end{verbatim}
+Por exemplo, se pretendêssemos criar um programa para calcular os pontos de uma equipa no campeonato de futebol faríamos algo do género:
+\begin{lstlisting}
+ler jogosGanhos.
+ler jogosEmpatados.
+pontos = jogosGanhos * 3 + jogosEmpatados.
+escrever pontos.
+\end{lstlisting}
 No programa anterior a instrução \texttt{ler}, coloca numa \emph{variável} um valor fornecido pelo utilizador. Uma variável
 é a memória do nosso programa. É como uma gaveta com nome, na qual podemos guardar valores para mais tarde utilizar.
 O programa anterior precisa de guardar os valores do número de jogos ganhos e empatados para poder efectuar a operação matemática que devolve o número de pontos no campeonato. O resultado desse cálculo, é, ele mesmo, colocado também numa ``gaveta'' para posterior utilização. Uma vez colocados na ``gaveta'' (variável), os dados podem ser consultados em qualquer altura (ponto de execução) do nosso programa. 
@@ -269,18 +280,18 @@ O programa anterior precisa de guardar os valores do número de jogos ganhos e e
 \item[selecção] \footnote{O conceito de selecção será aprofundado no Capítulo~\ref{cap:seleccao}.}
 O conceito de \emph{selecção} está associado ao caminho executado pelo nosso programa. Um programa pode ser visto como uma árvore: a execução começa por um ponto comum -- o tronco, e, à medida que o programa executa, pode percorrer um ramo ou outro, dependendo das circunstâncias no momento da execução.
 Por exemplo, no programa seguinte:
-\begin{verbatim}
-1 - ler jogosGanhosFCP.
-2 - ler jogosEmpatadosFCP.
-3 - ler jogosGanhosSLB.
-4 - ler jogosEmpatadosSLB.
-5 - pontosFCP = jogosGanhosFCP * 3 + jogosEmpatadosFCP.
-6 - pontosSLB = jogosGanhosSLB * 3 + jogosEmpatadosSLB.
-7 - se pontosFCP > pontosSLB então
-    8 - escrever "O FCP está à frente do SLB".
-9 - senão
-    10 - escrever "O SLB está à frente do FCP".     
-\end{verbatim}
+\begin{lstlisting}
+ler jogosGanhosFCP.
+ler jogosEmpatadosFCP.
+ler jogosGanhosSLB.
+ler jogosEmpatadosSLB.
+pontosFCP = jogosGanhosFCP * 3 + jogosEmpatadosFCP.
+pontosSLB = jogosGanhosSLB * 3 + jogosEmpatadosSLB.
+se pontosFCP > pontosSLB então
+	escrever "O FCP está à frente do SLB".
+senão
+	escrever "O SLB está à frente do FCP".     
+\end{lstlisting}
 
 existe um ``tronco'' comum a todas as execuções do programa -- as linhas de 1 a 7.
 No entanto, consoante a pontuação de uma e outra equipa, o programa pode percorrer o ramo 8 -- se o FCP tiver mais pontos que o SLB, ou o ramo 10 -- se o SLB tiver mais pontos que o FCP.
